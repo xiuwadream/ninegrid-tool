@@ -6,6 +6,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "html2canvas": "^1.4.1",
     "vue": "^3.0.5"
   },
   "devDependencies": {
