@@ -17,6 +17,9 @@
     <div>
       <b>单元格大小:</b><input type="range" min="40" max="200" v-model.number="gridSize"><span>{{ gridSize }}</span>
     </div>
+    <div>
+      <b>字体大小:</b><input type="range" min="16" max="96" v-model.number="fontSize"><span>{{ fontSize }}</span>
+    </div>
     <table id="output">
       <tr v-for="r in gridCount">
         <td v-for="rd in gridCount">{{ gridValues[pos(r, rd)] }}</td>
@@ -42,6 +45,7 @@ watch(gridCount, (newCount) => {
 
 const border = ref(1)
 const gridSize = ref(40)
+const fontSize = ref(16)
 
 function pos(i, j) {
   return (i - 1) * gridCount.value + (j - 1)
@@ -70,6 +74,7 @@ table td {
   margin: 0;
   width: v-bind('gridSize+"px"');
   height: v-bind('gridSize+"px"');
+  font-size: v-bind('fontSize+"px"');
   text-align: center;
 }
 
